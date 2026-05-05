@@ -1,0 +1,128 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    color: #333333;
+}
+
+/* HEADER */
+
+header {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* MAIN */
+
+main {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* SECCIONES */
+
+section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+}
+
+h1,
+h2,
+h3 {
+    color: #004080;
+}
+
+
+
+/* SOBRE MÍ */
+
+#sobre-mi article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#sobre-mi p {
+    width: 70%;
+}
+
+#sobre-mi img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* LISTAS */
+
+ul {
+    padding-left: 20px;
+}
+
+/* FORMULARIO */
+
+form {
+    margin-top: 15px;
+}
+
+fieldset {
+    border: 2px solid #004080;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+legend {
+    color: #004080;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
