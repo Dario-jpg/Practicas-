@@ -340,3 +340,30 @@ footer {
         gap: 15px;
     }
 }
+
+/* =========================
+   NUEVOS ESTILOS SEPARACIÓN GITHUB
+========================= */
+
+.separador-proyectos {
+    border: 0;
+    border-top: 1px dashed #cccccc;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+#cargando-github {
+    width: 100%;
+    color: #777777;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Adaptación del separador al Modo Oscuro */
+body.oscuro .separador-proyectos {
+    border-top: 1px dashed #555555;
+}
+
+body.oscuro #cargando-github {
+    color: #aaaaaa;
+}

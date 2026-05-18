@@ -138,7 +138,55 @@ formularioEstudio.addEventListener("submit", (event) => {
 });
 
 // =========================
+// CONSUMIR API DE GITHUB
+// =========================
+
+const usuarioGithub = "Dario-jpg"; 
+const contenedorProyectosGithub = document.getElementById("proyectos-github");
+const mensajeCarga = document.getElementById("cargando-github");
+
+async function cargarProyectosGithub() {
+    if (!contenedorProyectosGithub) return;
+
+    try {
+        const respuesta = await fetch(`https://api.github.com/users/${usuarioGithub}/repos?sort=updated`);
+        
+        if (!respuesta.ok) {
+            throw new Error("Error al conectar con GitHub");
+        }
+
+        const repositorios = await respuesta.json();
+
+        // Quitamos el texto de "Cargando..."
+        if (mensajeCarga) mensajeCarga.remove();
+
+        // Insertamos tus proyectos de GitHub en su nuevo espacio dedicado
+        repositorios.slice(0, 4).forEach(repo => {
+            
+            const articulo = document.createElement("article");
+            articulo.classList.add("proyecto"); 
+
+            const descripcion = repo.description ? repo.description : "Sin descripción disponible.";
+
+            articulo.innerHTML = `
+                <h3><a href="${repo.html_url}" target="_blank" style="color: inherit; text-decoration: none;">${repo.name}</a></h3>
+                <p>${descripcion}</p>
+            `;
+
+            contenedorProyectosGithub.appendChild(articulo);
+        });
+
+    } catch (error) {
+        console.error("Error cargando GitHub:", error);
+        if (mensajeCarga) {
+            mensajeCarga.textContent = "No se pudieron cargar los repositorios de GitHub en este momento.";
+        }
+    }
+}
+
+// =========================
 // INICIAR APLICACIÓN
 // =========================
 
 mostrarEstudios();
+cargarProyectosGithub();
