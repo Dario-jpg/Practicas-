@@ -1,0 +1,381 @@
+/* ===== VARIABLES ===== */
+:root {
+  --bg: #f0f0f0;
+  --bg-card: #ffffff;
+  --bg-header: #2e2e2e;
+  --border: #cccccc;
+  --text: #222222;
+  --text-light: #666666;
+  --text-white: #ffffff;
+
+  --btn-primary: #444444;
+  --btn-primary-hover: #222222;
+  --btn-secondary: #888888;
+  --btn-secondary-hover: #555555;
+  --btn-danger: #999999;
+  --btn-danger-hover: #666666;
+  --btn-success: #6a6a6a;
+  --btn-success-hover: #444444;
+
+  --priority-high: #555555;
+  --priority-medium: #888888;
+  --priority-low: #bbbbbb;
+
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--bg-header);
+  color: var(--text-white);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+}
+
+.badge {
+  background: #555;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* ===== MAIN ===== */
+.main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.task-count {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin: 12px 0;
+}
+
+/* ===== FILTER BAR ===== */
+.filter-bar {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+select {
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: 2px solid #aaa;
+}
+
+/* ===== TASK LIST ===== */
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+}
+
+/* ===== TASK CARD ===== */
+.task-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.task-completed {
+  opacity: 0.6;
+  background: #f8f8f8;
+}
+
+.task-card h3 {
+  font-size: 1rem;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.task-desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.task-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  flex-wrap: wrap;
+}
+
+.status-label {
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ===== PRIORITY BADGES ===== */
+.priority-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  width: fit-content;
+}
+
+.priority-high {
+  background: var(--priority-high);
+}
+
+.priority-medium {
+  background: var(--priority-medium);
+}
+
+.priority-low {
+  background: var(--priority-low);
+  color: #333;
+}
+
+/* ===== TASK ACTIONS ===== */
+.task-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--btn-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+
+.btn-danger {
+  background: var(--btn-danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: var(--btn-danger-hover);
+}
+
+.btn-success {
+  background: var(--btn-success);
+  color: white;
+}
+
+.btn-success:hover {
+  background: var(--btn-success-hover);
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+/* ===== FORMULARIO ===== */
+.form-container {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: 2px solid #999;
+}
+
+.form-group small {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: right;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.error {
+  color: #888;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}
